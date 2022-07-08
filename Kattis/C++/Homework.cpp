@@ -5,17 +5,16 @@ int main() {
     int a, b, sum = 0;
     char sym;
 
-    cin >> a;
-    while (cin >> sym) {
+    while (cin >> a >> sym) {
         if (sym == '-') {
-            cin >> b;
+            cin >> b >> sym;
             sum += b-a + 1;
         } else if (sym == ';') {
             sum++;
         }
     }
 
-    std::cout << sum << endl; // doesn't count the last number if it is after a semicolon
+    std::cout << ++sum << endl; // doesn't count the last number if it is after a semicolon
 
     return 0;
 }
