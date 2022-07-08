@@ -14,7 +14,7 @@ int main() {
         }
     }
 
-    std::cout << ++sum << endl; // doesn't count the last number if it is after a semicolon
+    std::cout << sum << endl;
 
     return 0;
-}
+} 
