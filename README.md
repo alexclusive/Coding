@@ -25,6 +25,7 @@ Code for each challenge is found under Kattis/{Language}/{Difficulty}/{Challenge
 | Easy          | abc            | Completed | Java, C++  |
 | Easy          | aaah           | Completed | Java       |
 | Easy          | hello          | Completed | Java       |
+| Easy          | bijele         | Completed | C++        |
 <!--
 Template for new row
 | temp| temp| temp| temp|
