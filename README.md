@@ -3,6 +3,7 @@ Coding challenges that I have submitted or I am working on.
 
 ## Kattis
 Each `challenge` can be found at https://open.kattis.com/problems/`challenge`
+
 Code for each challenge is found under Kattis/{Language}/{Difficulty}/{Challenge}
 | Difficulty    | Challenge      | Status    | Language   |
 |---------------|----------------|-----------|------------|
@@ -21,11 +22,11 @@ Code for each challenge is found under Kattis/{Language}/{Difficulty}/{Challenge
 | Easy          | upprodun       | Completed | Java       |
 | Easy          | echoechoecho   | Completed | Java       |
 | Easy          | aboveaverage   | Completed | Java       |
-| Easy          | abc            | Completed | Java       |Try in C++
+| Easy          | abc            | Completed | Java, C++  |
 | Easy          | aaah           | Completed | Java       |
 | Easy          | hello          | Completed | Java       |
 <!--
 Template for new row
 | temp| temp| temp| temp|
--- at the end of row means not included in repo yet
+a `--` at the end of row means row not included in repo yet
 -->
