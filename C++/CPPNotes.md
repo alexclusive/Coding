@@ -1,6 +1,6 @@
 <!--
 Markdown notes: https://www.w3schools.io/file/markdown-introduction/
-C++ notes: https://www.educba.com/software-development/software-development-tutorials/c-tutorial/
+C notes: https://www.educba.com/software-development/software-development-tutorials/c-tutorial/
 -->
 # Notes for C++
 ## General
