@@ -1,5 +1,6 @@
 <!--
-https://www.w3schools.io/file/markdown-introduction/
+Markdown notes: https://www.w3schools.io/file/markdown-introduction/
+C++ notes: https://www.educba.com/software-development/software-development-tutorials/c-tutorial/
 -->
 # Notes for C++
 ## General
@@ -43,9 +44,12 @@ Operands
     * "insert" operator - basically "give to"
     * usually used after `cout`
     * usually used when outputting to `cout`
-        - e.g. with 2 `int` variables already declared (and initialised for meaningful output)\
+        - e.g. with 2 `int` variables `a` and `b` already declared (and initialised for meaningful output)\
         The `<<` must be used between each variable\
         `cout << a << b;`
+        - e.g. with 2 `int` variables `a` and `b` already declared and initialised\
+        `cout << a>b ? 1 : 0;` does not work, but\
+        `cout << (a>b) ? 1 : 0;` does work
 
 ## Data types
 Unsigned ints
