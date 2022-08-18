@@ -5,8 +5,8 @@ Coding challenges that I have submitted or I am working on.
 Each `challenge` can be found at https://open.kattis.com/problems/`challenge`
 
 Code for each challenge is found under Kattis/{Language}/{Difficulty}/{Challenge}
-| Difficulty| Challenge     | Status        | Language  |
-|------|--------------------|---------------|-----------|
+| Difficulty| Challenge             | Status        | Language  |
+|-------|---------------------------|---------------|-----------|
 | Easy  | heimanvinna               | Completed     | Java, C++ |
 | Easy  | skruop                    | Completed     | Java      |
 | Easy  | sumsquaredigits           | Incomplete    | Java      |
@@ -31,6 +31,7 @@ Code for each challenge is found under Kattis/{Language}/{Difficulty}/{Challenge
 | Easy  | triarea                   | Completed     | C++       |
 | Easy  | pot                       | Completed     | C++       |
 | Easy  | twosum                    | Completed     | C++       |
+| Medium| bitbybit                  | Incomplete    | C++       |Passes half the tests
 <!--
 Template for new row
 | temp| temp| temp| temp|
