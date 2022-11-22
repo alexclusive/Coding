@@ -62,6 +62,9 @@ Unsigned ints
     * using the 'fastest' datatype (e.g. could be 32 bit or something)
     * literally what on earth does that mean
 
+Strings
+- check Kattis/C++/easy/greetings2 and fyi for some string manipulation
+
 ## Arrays
 ### Initialisation
 What you can do:

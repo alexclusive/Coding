@@ -31,6 +31,14 @@ Code for each challenge is found under Kattis/{Language}/{Difficulty}/{Challenge
 | Easy  | triarea                   | Completed     | C++       |
 | Easy  | pot                       | Completed     | C++       |
 | Easy  | twosum                    | Completed     | C++       |
+| Easy  | qaly                      | Completed     | C++       |
+| Easy  | digitswap                 | Completed     | C++       |
+| Easy  | tarifa                    | Completed     | C++       |
+| Easy  | greetings2                | Completed     | C++       |
+| Easy  | jumbojavelin              | Completed     | C++       |
+| Easy  | jackolanternjuxtaposition | Completed     | C++       |
+| Easy  | gcvwr                     | Completed     | C++       |--
+| Easy  | fyi                       | Completed     | C++       |
 | Medium| bitbybit                  | Incomplete    | C++       |Passes half the tests
 <!--
 Template for new row
