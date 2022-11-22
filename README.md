@@ -7,7 +7,7 @@ Each `challenge` can be found at https://open.kattis.com/problems/`challenge`
 Code for each challenge is found under Kattis/{Language}/{Difficulty}/{Challenge}
 | Difficulty| Challenge             | Status        | Language  |
 |-------|---------------------------|---------------|-----------|
-| Easy  | heimanvinna               | Completed     | Java, C++ |
+| Easy  | heimavinna                | Completed     | Java, C++ |
 | Easy  | skruop                    | Completed     | Java      |
 | Easy  | sumsquaredigits           | Incomplete    | Java      |
 | Easy  | weakvertices              | Completed     | Java      |
@@ -37,7 +37,7 @@ Code for each challenge is found under Kattis/{Language}/{Difficulty}/{Challenge
 | Easy  | greetings2                | Completed     | C++       |
 | Easy  | jumbojavelin              | Completed     | C++       |
 | Easy  | jackolanternjuxtaposition | Completed     | C++       |
-| Easy  | gcvwr                     | Completed     | C++       |--
+| Easy  | gcvwr                     | Completed     | C++       |
 | Easy  | fyi                       | Completed     | C++       |
 | Medium| bitbybit                  | Incomplete    | C++       |Passes half the tests
 <!--
