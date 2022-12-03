@@ -96,3 +96,15 @@ Template for new row
 | temp| temp| temp| temp|
 a `--` at the end of row means row not included in repo yet
 -->
+
+## Advent of Code
+
+Each challenge is found at https://adventofcode.com/`Year`/day/`Day`
+
+Code for each challenge is found under AdventOfCode/{Year}/{Day}/
+
+### 2022
+
+| Day | Status     | Language |
+|-----|------------|----------|
+| 1   | Complete | C++      |
