@@ -35,23 +35,8 @@ int main() {
                     arr[stack].push(item);
                 }
             }
-
-            // old attempt
-            // for (int i = 1, s = 0; i <= numStacks; i+=4, s++) {
-            //     char item = buffer.top()[i];
-            //     // cout << buffer.top()[i] << endl;
-            //     if (item != ' ') {   // I don't think space was the right representation for a blank
-            //         arr[s].push(item);
-            //     }
-            // }
             buffer.pop();
         }
-
-        // for (int i = 0; i < numStacks; i++) {
-        //     cout << i << endl;
-        //     cout << arr[i].top() << endl;
-        //     arr[i].pop();
-        // }
 
         // read and move instructions
         int num, from, to;
@@ -59,11 +44,15 @@ int main() {
         while (in >> buf >> num >> buf >> from >> buf >> to) {
             from--;
             to--;
-            // move from from to to 1 at a time
+            // move from from to to a group at a time
+            stack<char> group;
             for (int i = 0; i < num; i++) {
-                // cout << arr[from].top() << endl;
-                arr[to].push(arr[from].top());
+                group.push(arr[from].top());
                 arr[from].pop();
+            }
+            for (int i = 0; i < num; i++) {
+                arr[to].push(group.top());
+                group.pop();
             }
         }
 
