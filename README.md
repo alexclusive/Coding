@@ -107,4 +107,6 @@ Code for each challenge is found under AdventOfCode/{Year}/{Day}/
 
 | Day | Status     | Language |
 |-----|------------|----------|
-| 1   | Complete | C++      |
+| 1   | Complete   | C++      |
+| 2   | Complete   | C++      |
+| 3   | Complete   | C++      |
