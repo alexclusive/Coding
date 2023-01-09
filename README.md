@@ -110,3 +110,5 @@ Code for each challenge is found under AdventOfCode/{Year}/{Day}/
 | 1   | Complete   | C++      |
 | 2   | Complete   | C++      |
 | 3   | Complete   | C++      |
+| 4   | Complete   | C++      |
+| 5   | Complete   | C++      |
