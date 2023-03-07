@@ -4,73 +4,88 @@
 using namespace std;
 
 int main() {
+    bool input = false;
     string filename = "example";
+    if (input) {
+        filename = "input";
+    }
     ifstream in (filename);
     if (in.is_open()) {
-        int size = 0;
-        string tmp;
-        getline(in, tmp);
-        size = tmp.size(); // hopefully its square
-
-        string arr[size];
-        arr[0] = tmp;
-        for (int i = 1; i < size; i++) {
-            getline(in, arr[i]);
+        int size = 5;
+        if (input) {
+            size = 99;
         }
 
-        for (string s : arr) {
-            cout << s << endl;
+        int **arr = new int*[size];
+        for(int i = 0; i < size; ++i) {
+            string tmp;
+            getline(in, tmp);
+            arr[i] = new int[size];
+            for (int j = 0; j < size; j++) {
+                arr[i][j] = tmp[j] - '0';
+            }
+            cout << endl;
         }
 
         int count = 0;
-        for (int i = 1; i < size-1; i++) {
-            for (int j = 1; j < size-1; j++) {
-                int current = arr[i][j] - '0';
+        for (int x = 1; x < size-1; x++) {
+            for (int y = 1; y < size-1; y++) {
+                int current = arr[x][y];
 
                 bool obstructed = false;
-                for (int x = 0; x < j; x++) { // left
-                    if (current <= arr[i][x] - '0') {
+                for (int i = 0; i < x; i++) {
+                    cout << i << ' ' << y << endl;
+                    // cout << current << ' ' << arr[i][y] << endl;
+                    if (current <= arr[i][y]) {
+                        // cout << "obstructed" << endl;
                         obstructed = true;
                         break;
                     }
                 }
-                if (!obstructed) {
-                    count++;
-                    continue;
-                }
-
-                for (int x = j + 1; x < size; x++) { // right
-                    if (current <= arr[i][x] - '0') {
-                        obstructed = true;
-                        break;
-                    }
-                }
-                if (!obstructed) {
-                    count++;
-                    continue;
-                }
-
-                for (int y = 0; y < i; y++) { // top
-                    if (current <= arr[y][j] - '0') {
-                        obstructed = true;
-                        break;
-                    }
-                }
-                if (!obstructed) {
-                    count++;
-                    continue;
-                }
-
-                for (int y = i + 1; y < size; y++) { // bottom
-                    if (current <= arr[y][j]) {
-                        obstructed = true;
-                        break;
-                    }
-                }
-                if (!obstructed) {
-                    count++;
-                    continue;
-                }
+                // if (!obstructed) {
+                //     count++;
+                //     continue;
+                // }
+                // cout << endl;
+                // for (int x = i + 1; x < size; x++) { // right
+                //     cout << current << ' ' << arr[x][j] << endl;
+                //     if (current <= arr[x][j]) {
+                //         cout << "obstructed" << endl;
+                //         obstructed = true;
+                //         break;
+                //     }
+                // }
+                // if (!obstructed) {
+                //     count++;
+                //     continue;
+                // }
+                // cout << endl;
+                // for (int y = 0; y < j; y++) { // top
+                //     cout << current << ' ' << arr[i][y] << endl;
+                //     if (current <= arr[i][y]) {
+                //         cout << "obstructed" << endl;
+                //         obstructed = true;
+                //         break;
+                //     }
+                // }
+                // if (!obstructed) {
+                //     count++;
+                //     continue;
+                // }
+                // cout << endl;
+                // for (int y = j + 1; y < size; y++) { // bottom
+                //     cout << current << ' ' << arr[i][y] << endl;
+                //     if (current <= arr[i][y]) {
+                //         cout << "obstructed" << endl;
+                //         obstructed = true;
+                //         break;
+                //     }
+                // }
+                // if (!obstructed) {
+                //     count++;
+                //     continue;
+                // }
+                // cout << endl;
             }
         }
         cout << endl << endl << count << endl;

@@ -45,6 +45,7 @@
         "typeinfo": "cpp",
         "xstring": "cpp",
         "cstring": "cpp",
-        "list": "cpp"
+        "list": "cpp",
+        "xlocale": "cpp"
     }
 }
