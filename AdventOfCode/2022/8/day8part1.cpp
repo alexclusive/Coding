@@ -16,7 +16,10 @@ int main() {
         arr[0] = tmp;
         for (int i = 1; i < size; i++) {
             getline(in, arr[i]);
-            // cout << arr[i] << endl;
+        }
+
+        for (string s : arr) {
+            cout << s << endl;
         }
 
         int count = 0;
@@ -24,46 +27,53 @@ int main() {
             for (int j = 1; j < size-1; j++) {
                 int current = arr[i][j] - '0';
 
-                bool visible = true;
+                bool obstructed = false;
                 for (int x = 0; x < j; x++) { // left
                     if (current <= arr[i][x] - '0') {
-                        cout << x << i << ' ';
-                        cout << current << ' ' << arr[i][x] - '0';
-                        visible = false;
+                        obstructed = true;
                         break;
                     }
                 }
-                cout << endl;
-                if (!visible) { // don't need to check if it was not visible
-                    for (int x = j + 1; x < size; x++) { // right
-                        if (current <= arr[i][x] - '0') {
-                            visible = false;
-                            break;
-                        }
-                    }
-                }
-                if (!visible) {
-                    for (int y = 0; y < i; y++) { // top
-                        if (current <= arr[y][j] - '0') {
-                            visible = false;
-                            break;
-                        }
-                    }
-                }
-                if (!visible) {
-                    for (int y = i + 1; y < size; y++) { // bottom
-                        if (current <= arr[y][j] - '0') {
-                            visible = false;
-                            break;
-                        }
-                    }
+                if (!obstructed) {
+                    count++;
+                    continue;
                 }
 
-                if (visible) {
+                for (int x = j + 1; x < size; x++) { // right
+                    if (current <= arr[i][x] - '0') {
+                        obstructed = true;
+                        break;
+                    }
+                }
+                if (!obstructed) {
                     count++;
+                    continue;
+                }
+
+                for (int y = 0; y < i; y++) { // top
+                    if (current <= arr[y][j] - '0') {
+                        obstructed = true;
+                        break;
+                    }
+                }
+                if (!obstructed) {
+                    count++;
+                    continue;
+                }
+
+                for (int y = i + 1; y < size; y++) { // bottom
+                    if (current <= arr[y][j]) {
+                        obstructed = true;
+                        break;
+                    }
+                }
+                if (!obstructed) {
+                    count++;
+                    continue;
                 }
             }
         }
-        cout << count << endl;
+        cout << endl << endl << count << endl;
+        cout << (count + (size - 1) * 4) << endl;
     }
 }
