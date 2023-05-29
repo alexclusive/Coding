@@ -1,71 +1,70 @@
 eg = "example"
 inp = "input"
-filename = eg
+test = "test"
+filename = inp
 f = open(filename, "r")
 contents = f.read().split("\n")
 size = len(contents[0])
 
-def toArr(old):
-    newArr = []
-    newSubArr = []
-    for r in old:
-        for c in r:
-            newSubArr.append(int(c))
-        newArr.append(newSubArr)
-        newSubArr = []
-    return newArr
+def to_arr(old):
+	new_arr = []
+	for r in old:
+		new_sub_arr = []
+		for c in r:
+			new_sub_arr.append(int(c))
+		new_arr.append(new_sub_arr)
+	return new_arr
 
-arr = toArr(contents)
+arr = to_arr(contents)
 
-visible = 0#(size - 1) * 4
+visible = (size - 1) * 4
 
-for x in range(1, size - 1):
-    for y in range(1, size - 1):
-        obstructed = False
+for i in range(1, size-1): # rows (553)
+	for j in range(1, size-1): # columns (551)
+		tree = arr[i][j]
+		is_visible = True
 
-        # left
-        for i in range(0, x):
-            if arr[x][i] >= arr[x][y]:
-                obstructed = True
-                break
-        if not obstructed:
-            visible += 1
-            continue
+		"""
+		1,1 visible top, left
+		1,2 visible top, right
+		2,1 visible right
+		2,3 visible right
+		3,2 visible bottom, left
+		"""
 
-        # right
-        for i in range(x+1, size):
-            if arr[x][i] >= arr[x][y]:
-                obstructed = True
-                break
-        if not obstructed:
-            visible += 1
-            continue
+		# top
+		for x in range(0, i):
+			if arr[x][j] >= tree:
+				is_visible = False
 
-        # top
-        for j in range(0, y):
-            if arr[j][y] >= arr[x][y]:
-                obstructed = True
-                break
-        if not obstructed:
-            visible += 1
-            continue
+		# bottom
+		if not is_visible:
+			is_visible = True
+			for x in range(i+1, size):
+				if arr[x][j] >= tree:
+					is_visible = False
 
-        # bottom
-        for j in range(y+1, size):
-            if arr[j][y] >= arr[x][y]:
-                obstructed = True
-                break
-        if not obstructed:
-            visible += 1
-            continue
+		# left
+		if not is_visible:
+			is_visible = True
+			for x in range(0, j):
+				if arr[i][x] >= tree:
+					is_visible = False
 
-        # any items that are printed here are incorrectly marked
-        if x == 1 and y == 1\
-            or x == 2 and y == 1\
-            or x == 1 and y == 2\
-            or x == 3 and y == 2\
-            or x == 2 and y == 3:
-            print("X:", x, "Y:", y)
+		# right
+		if not is_visible:
+			is_visible = True
+			for x in range(j+1, size):
+				if arr[i][x] >= tree:
+					is_visible = False
 
+		if is_visible:
+			print("visible")
+			visible += 1
+
+		# if not (i == 1 and j == 2\
+		# 	or i == 2 and j == 1\
+		# 	or i == 2 and j == 3):
+		# 	continue
 
 print(visible)
