@@ -62,9 +62,4 @@ for i in range(1, size-1): # rows (553)
 			print("visible")
 			visible += 1
 
-		# if not (i == 1 and j == 2\
-		# 	or i == 2 and j == 1\
-		# 	or i == 2 and j == 3):
-		# 	continue
-
 print(visible)
