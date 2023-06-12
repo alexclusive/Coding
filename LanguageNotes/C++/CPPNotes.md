@@ -21,46 +21,46 @@ For C++ file with filename `test.cpp`.\
 Make sure to have `#include <iostream>` before main.\
 Keywords (assuming `using namespace std;`)
 - `cin`
-    * used for input
-    * returns boolean when taking input with the `>>` operand
-        - true if successfully read
-        - false if unsuccessfully read
+	* used for input
+	* returns boolean when taking input with the `>>` operand
+		- true if successfully read
+		- false if unsuccessfully read
 - `cout`
-    * used for output
+	* used for output
 - `endl`
-    * used for new line
-    * short for "end line"
+	* used for new line
+	* short for "end line"
 
 Operands
 - `>>`
-    * "extract" operator - basically "take from"
-    * usually used after `cin`
-    * usually used to extract input from `cin` into variables
-        - e.g. with 2 `int` variables `a` and `b` already declared (not necessarily initialised)\
-        The `>>` must be used between each variable\
-        `cin >> a >> b;`
+	* "extract" operator - basically "take from"
+	* usually used after `cin`
+	* usually used to extract input from `cin` into variables
+		- e.g. with 2 `int` variables `a` and `b` already declared (not necessarily initialised)\
+		The `>>` must be used between each variable\
+		`cin >> a >> b;`
 
 - `<<`
-    * "insert" operator - basically "give to"
-    * usually used after `cout`
-    * usually used when outputting to `cout`
-        - e.g. with 2 `int` variables `a` and `b` already declared (and initialised for meaningful output)\
-        The `<<` must be used between each variable\
-        `cout << a << b;`
-        - e.g. with 2 `int` variables `a` and `b` already declared and initialised\
-        `cout << a>b ? 1 : 0;` does not work, but\
-        `cout << (a>b) ? 1 : 0;` does work
+	* "insert" operator - basically "give to"
+	* usually used after `cout`
+	* usually used when outputting to `cout`
+		- e.g. with 2 `int` variables `a` and `b` already declared (and initialised for meaningful output)\
+		The `<<` must be used between each variable\
+		`cout << a << b;`
+		- e.g. with 2 `int` variables `a` and `b` already declared and initialised\
+		`cout << a>b ? 1 : 0;` does not work, but\
+		`cout << (a>b) ? 1 : 0;` does work
 
 ## Data types
 Unsigned ints
 - uint16_t
-    * using 16 bits
+	* using 16 bits
 - uint_least16_t
-    * using at least 16 bits
+	* using at least 16 bits
 - uint_Fast16_t
-    * using at least 16 bits
-    * using the 'fastest' datatype (e.g. could be 32 bit or something)
-    * literally what on earth does that mean
+	* using at least 16 bits
+	* using the 'fastest' datatype (e.g. could be 32 bit or something)
+	* literally what on earth does that mean
 
 Strings
 - check Kattis/C++/easy/greetings2 and fyi for some string manipulation
@@ -69,24 +69,27 @@ Strings
 ### Initialisation
 What you can do:
 - `int arr[3];`
-    * new int array of size 3
-    * printing from this gives random values
-        - e.g. `{6422280, 1976201005, 4201648}`
+	* new int array of size 3
+	* printing from this gives random values
+		- e.g. `{6422280, 1976201005, 4201648}`
 - `int arr[] = {0, 1, 2};`
-    * new int array of size 3
-    * with values {0, 1, 2}
-    * printing from this gives defined values
-        - e.g. `{0, 1, 2}`
-- `int arr* = new int[n]();`
-    * new int array of size `n`
-    * making a new array is like using a constructor
-    * printing from this gives all 0s
-        - e.g. `{0, 0, 0}`
+	* new int array of size 3
+	* with values {0, 1, 2}
+	* printing from this gives defined values
+		- e.g. `{0, 1, 2}`
+- `int *arr = new int[n]();`
+	* must be `*arr`, NOT `arr*`
+	* the brackets are optional, can do `new int[n];`
+	* new int array of size `n`
+	* making a new array is like using a constructor
+	* printing from this gives all 0s
+		- e.g. `{0, 0, 0}`
 
 What you cannot do:
 - `int arr[] = new int[n];`
-    * array size cannot be a variable
-    * must be constant
+	* array size cannot be a variable
+	* must be constant
+	* however, this is allowed if compiled with g++ (because C can do it)
 - `int[] arr = {1, 2, 3};`
-    * the `[]` must be on the array name (before or after)
-    * if done with pointer `*`, must be before array name
+	* the `[]` must be on the array name (before or after)
+	* if done with pointer `*`, must be before array name

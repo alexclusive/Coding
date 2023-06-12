@@ -3,15 +3,15 @@ public class SumBase {
 
 	public static void main(String[] args) {
 		Scanner s = new Scanner(System.in);
-        int P = s.nextInt();
-        int K = s.nextInt();
-        while (K <= P) {
-        	int b = s.nextInt();
-        	int n = s.nextInt(); // might get overflow from signed
-        	System.out.println(K + " " + SSD(b,n));
-        	K = s.nextInt();
-        }
-        s.close();
+		int P = s.nextInt();
+		int K = s.nextInt();
+		while (K <= P) {
+			int b = s.nextInt();
+			int n = s.nextInt(); // might get overflow from signed
+			System.out.println(K + " " + SSD(b,n));
+			K = s.nextInt();
+		}
+		s.close();
 	}
 	
 	private static int SSD(int b, int n) {

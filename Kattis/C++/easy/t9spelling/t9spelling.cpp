@@ -3,17 +3,17 @@
 using namespace std;
 
 string translate(string str) {
-    
-    return str;
+	
+	return str;
 }
 
 int main() {
-    int n;
-    cin >> n;
-    string str;
-    for(int i = 1; i<=n; i++) {
-        cout << "Case #" << i << ": ";
-        getline(std::cin, str);
-        cout << translate(str) << endl;
-    }
+	int n;
+	cin >> n;
+	string str;
+	for(int i = 1; i<=n; i++) {
+		cout << "Case #" << i << ": ";
+		getline(std::cin, str);
+		cout << translate(str) << endl;
+	}
 }

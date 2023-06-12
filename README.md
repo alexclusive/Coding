@@ -55,43 +55,6 @@ Code for each challenge is found under Kattis/{Language}/{DifficultyLevel}/{Chal
 | 3.0       | Incomplete    | C++       | bitbybit |Passes half the tests
 
 <!--
-Old Table
-| Difficulty| Challenge             | Status        | Language  |
-|-------|---------------------------|---------------|-----------|
-| Easy  | heimavinna                | Completed     | Java, C++ |
-| Easy  | skruop                    | Completed     | Java      |
-| Easy  | sumsquaredigits           | Incomplete    | Java      |
-| Easy  | weakvertices              | Completed     | Java      |
-| Easy  | addtwonumbers             | Completed     | C++       |
-| Easy  | betting                   | Completed     | C++       |
-| Easy  | carrots                   | Completed     | C++       |
-| Easy  | fizzbuzz                  | Completed     | C++       |
-| Easy  | fodelsedagsmemorisering   | Incomplete    | C++       |
-| Easy  | r2                        | Completed     | C++       |
-| Easy  | sorttwonumbers            | Completed     | C++       |
-| Easy  | autori                    | Completed     | Java      |
-| Easy  | upprodun                  | Completed     | Java      |
-| Easy  | echoechoecho              | Completed     | Java      |
-| Easy  | aboveaverage              | Completed     | Java      |
-| Easy  | abc                       | Completed     | Java, C++ |
-| Easy  | aaah                      | Completed     | Java      |
-| Easy  | hello                     | Completed     | Java      |
-| Easy  | bijele                    | Completed     | C++       |
-| Easy  | oddecho                   | Completed     | C++       |
-| Easy  | whichisgreater            | Completed     | C++       |
-| Easy  | triarea                   | Completed     | C++       |
-| Easy  | pot                       | Completed     | C++       |
-| Easy  | twosum                    | Completed     | C++       |
-| Easy  | qaly                      | Completed     | C++       |
-| Easy  | digitswap                 | Completed     | C++       |
-| Easy  | tarifa                    | Completed     | C++       |
-| Easy  | greetings2                | Completed     | C++       |
-| Easy  | jumbojavelin              | Completed     | C++       |
-| Easy  | jackolanternjuxtaposition | Completed     | C++       |
-| Easy  | gcvwr                     | Completed     | C++       |
-| Easy  | fyi                       | Completed     | C++       |
-| Medium| bitbybit                  | Incomplete    | C++       |Passes half the tests
-
 Template for new row
 | temp| temp| temp| temp|
 a `--` at the end of row means row not included in repo yet

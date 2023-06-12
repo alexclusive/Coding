@@ -1,13 +1,2 @@
-
-Kattis/C++/a.exe
-Kattis/C++/easy/a.exe
-Kattis/C++/easy/r2/a.exe
-Kattis/C++/easy/carrots/a.exe
-Kattis/C++/easy/fizzbuzz/a.exe
-Kattis/C++/easy/abc/a.exe
-Kattis/C++/easy/bijele/a.exe
-Kattis/C++/easy/oddecho/a.exe
-Kattis/C++/easy/whichisgreater/a.exe
-Kattis/C++/easy/twosum/a.exe
-Kattis/C++/easy/triarea/a.exe
-Kattis/C++/easy/pot/a.exe
+*.exe
+*.class
