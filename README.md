@@ -68,15 +68,15 @@ Code for each challenge is found under AdventOfCode/{Year}/{Day}/
 
 ### 2022
 
-| Day | Status     | Language |
-|-----|------------|----------|
-| 1   | Complete   | C++      |
-| 2   | Complete   | C++      |
-| 3   | Complete   | C++      |
-| 4   | Complete   | C++      |
-| 5   | Complete   | C++      |
-| 6   | Complete   | C++      |
-| 7   | Incomplete | C++      |
-| 8   | Complete   | python   |
-| 9   | Complete   | python   |
-| 10  | Part 1     | python   |
+| Day	| Status	| Language	|
+|-------|-----------|-----------|
+| 1		| Complete	| C++		|
+| 2		| Complete	| C++		|
+| 3		| Complete	| C++		|
+| 4		| Complete	| C++		|
+| 5		| Complete	| C++		|
+| 6		| Complete	| C++		|
+| 7		| Part 1	| C++		|
+| 8		| Complete	| python 	|
+| 9		| Complete	| python	|
+| 10	| Part 1	| python	|

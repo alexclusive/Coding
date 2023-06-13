@@ -57,44 +57,48 @@ class File {
 
 		void print(string indent) {
 			cout << indent << "- " << name << " (" << size << ")" << endl;
-			for (File file : files) {
-				file.print(indent + "\t");
+			for (int i = 0; i < files.size(); i++) {
+				files[i].print(indent + "\t");
 			}
 		}
 
 		void calculateSize() {
-			long currentSize = 0;
-			for (auto file : files) {
-				if (file.directory) {
-					file.calculateSize();
-				}
-				currentSize += file.size;
-			}
-			cout << name << " " << currentSize << endl;
+			// cout << "name: '" << name << "', directory: " << directory << endl;
 			if (directory) {
-				size = currentSize;
+				long sum = 0;
+				for (int i = 0; i < files.size(); i++) {
+					files[i].calculateSize();
+					sum += files[i].size;
+				}
+				size = sum;
+				// cout << "'" << name << "': " << size << endl;
 			}
 		}
 
 		long sumLessThan(long less) {
-			long sum = 0;
-			if (directory) {
-				if (size < less) {
-					sum += size;
-				}
-				for (auto file : files) {
-					if (file.directory) {
-						sum += file.sumLessThan(less);
-					}
-				}
+			if (!directory) {
+				return 0;
 			}
-			return sum;
+
+			long thisSum = 0;
+			long ret = 0;
+			for (int i = 0; i < files.size(); i++) {
+				ret += files[i].sumLessThan(less);
+				thisSum += files[i].size;
+			}
+
+			if (thisSum < less) {
+				ret += thisSum;
+			}
+
+			return ret;
 		}
 };
 
-void part1(ifstream &in) {
+File readIn(ifstream &in) {
 	File outermost;
 	outermost.name = "/";
+	outermost.directory = true;
 
 	File* current = &outermost;
 
@@ -117,6 +121,7 @@ void part1(ifstream &in) {
 			File newFile;
 			if (command.substr(0,3) == "dir") {
 				newFile.name = command.substr(4);
+				newFile.directory = true;
 				newFile.parent = current;
 			} else {
 				newFile.name = getName(command);
@@ -127,17 +132,26 @@ void part1(ifstream &in) {
 		}
 	}
 
-	outermost.calculateSize();
-	// outermost.print("");
+	return outermost;
+}
+
+void part1(File outermost) {
+	cout << "Sum: " << outermost.sumLessThan(100000) << endl;
+}
+
+void part2(File outermost) {
 	
-	cout << "Sum: " << outermost.sumLessThan(10000) << endl;
 }
 
 int main() {
-	string filename = "example";
+	string filename = "input";
 	ifstream in (filename);
 	
 	if (in.is_open()) {
-		part1(in);
+		File outer = readIn(in);
+		outer.calculateSize();
+		// outermost.print("");
+		part1(outer);
+		part2(outer);
 	}
 }
