@@ -1,86 +1,143 @@
 #include <iostream>
 #include <fstream>
-#include <list>
 #include <string>
+#include <vector>
 using namespace std;
 
-class Directory {
-	public:
-		string name;
-		long size;
-		// list<long> filesizes;
-		Directory* parent;
-
-	Directory() {
-		size = -1;
-		name = "/";
-		parent = 0;
-	}
-
-	Directory(Directory* p) {
-		size = -1;
-		parent = p;
-	}
-
-	void addFile(long s) {
-		size += s;
-		if (parent != 0) {
-			parent->addFile(s);
+string getName(string cmd) {
+	int i = 0;
+	while (i < cmd.size()) {
+		if (cmd[i] == ' ') {
+			return cmd.substr(i+1);
 		}
+		i++;
 	}
+}
+
+long getSize(string cmd) {
+	int i = 0;
+	while (i < cmd.size()) {
+		if (cmd[i] == ' ') {
+			return stol(cmd.substr(0, i));
+		}
+		i++;
+	}
+}
+
+class File {
+	public:
+		string name = "";
+		File* parent = NULL;
+
+		bool directory = false;
+		vector<File> files;
+
+		long size = 0;
+
+		long getSize() {
+			if (directory) {
+				long dirSize = 0;
+				for (File file : files) {
+					dirSize += file.getSize();
+				}
+				return dirSize;
+			} else {
+				return size;
+			}
+		}
+
+		File* findFile(string name) {
+			for (int i = 0; i < files.size(); i++) {
+				if (files[i].name == name) {
+					return &files[i];
+				}
+			}
+			return this;
+		}
+
+		void print(string indent) {
+			cout << indent << "- " << name << " (" << size << ")" << endl;
+			for (File file : files) {
+				file.print(indent + "\t");
+			}
+		}
+
+		void calculateSize() {
+			long currentSize = 0;
+			for (auto file : files) {
+				if (file.directory) {
+					file.calculateSize();
+				}
+				currentSize += file.size;
+			}
+			cout << name << " " << currentSize << endl;
+			if (directory) {
+				size = currentSize;
+			}
+		}
+
+		long sumLessThan(long less) {
+			long sum = 0;
+			if (directory) {
+				if (size < less) {
+					sum += size;
+				}
+				for (auto file : files) {
+					if (file.directory) {
+						sum += file.sumLessThan(less);
+					}
+				}
+			}
+			return sum;
+		}
 };
 
-int findNum(string command) {
-	for (int i = 0; i < command.length(); i++) {
-		if (command[i] == ' ') {
-			return stoi(command.substr(0, i));
+void part1(ifstream &in) {
+	File outermost;
+	outermost.name = "/";
+
+	File* current = &outermost;
+
+	string command;
+	while (getline(in, command)) {
+		// cout << command << endl;
+		if (command[0] == '$') {
+			if (command[2] == 'c') {
+				string dirName = command.substr(5);
+				if (dirName == "/") {			// home
+					current = &outermost;
+				} else if (dirName == "..") {	// out
+					current = current->parent;
+				} else {						// in
+					current = current->findFile(dirName);
+				}
+			}
+			// ignore "ls"
+		} else {
+			File newFile;
+			if (command.substr(0,3) == "dir") {
+				newFile.name = command.substr(4);
+				newFile.parent = current;
+			} else {
+				newFile.name = getName(command);
+				newFile.size = getSize(command);
+				newFile.parent = current;
+			}
+			current->files.push_back(newFile);
 		}
 	}
-	return 0;
+
+	outermost.calculateSize();
+	// outermost.print("");
+	
+	cout << "Sum: " << outermost.sumLessThan(10000) << endl;
 }
 
 int main() {
 	string filename = "example";
 	ifstream in (filename);
+	
 	if (in.is_open()) {
-		string command;
-		getline(in, command);
-		Directory home = new Directory();
-		Directory cur;
-		long sum = 0;
-		// for now, assume no double ups of directories
-		// list<string> dirs;
-		// dirs.push_front("/");
-		do {
-			if (command[0] == '$') {
-				if (command[2] == 'c') { // cd <dir>
-					if (command[5] == '/') { // cd /
-						cur = home;
-					} else if (command[5] == '.') {
-						cur = cur.parent;  
-					} else {
-						// string dir = command.substr(5);
-						// if (!dirs.contains(dir)) {
-						//     dirs.push_front(dir);
-						//     cur = new Directory(cur);
-						// }
-						cur = new Directory(cur);
-					}
-				} else if (command[2] == 'l') { // ls
-					getline(in, command);
-					while (command[0] != '$') {
-						if (command[0] != 'd') {
-							int size = findNum(command);
-							cur.addFile(size);
-						}
-						getline(in, command);
-					}
-					if (cur.size <= 100000) {
-						sum += cur.size;
-					}
-				}
-			}
-		} while (getline(in, command));
-		cout << sum << endl;
+		part1(in);
 	}
 }
