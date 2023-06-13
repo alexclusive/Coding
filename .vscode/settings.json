@@ -46,6 +46,24 @@
 		"xstring": "cpp",
 		"cstring": "cpp",
 		"list": "cpp",
-		"xlocale": "cpp"
+		"xlocale": "cpp",
+		"bit": "cpp",
+		"compare": "cpp",
+		"concepts": "cpp",
+		"ios": "cpp",
+		"optional": "cpp",
+		"ranges": "cpp",
+		"span": "cpp",
+		"stack": "cpp",
+		"xfacet": "cpp",
+		"xiosbase": "cpp",
+		"xlocinfo": "cpp",
+		"xlocmon": "cpp",
+		"xlocnum": "cpp",
+		"xloctime": "cpp",
+		"xmemory": "cpp",
+		"xstddef": "cpp",
+		"xtr1common": "cpp",
+		"xutility": "cpp"
 	}
 }
