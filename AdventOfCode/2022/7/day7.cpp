@@ -93,6 +93,18 @@ class File {
 
 			return ret;
 		}
+
+		void findGreater(long great, vector<File*> &candidates) {
+			if (size >= great) {
+				// cout << "Dir '" << name << "' is " << size << endl;
+				candidates.push_back(this);
+			}
+			for (int i = 0; i < files.size(); i++) {
+				if (files[i].directory) {
+					files[i].findGreater(great, candidates);
+				}
+			}
+		}
 };
 
 File readIn(ifstream &in) {
@@ -140,7 +152,26 @@ void part1(File outermost) {
 }
 
 void part2(File outermost) {
-	
+	long disk = 70000000;
+
+	long unused = disk - outermost.size;
+	long need = 30000000 - unused; // we want to delete this much at least
+
+	// cout << "Used: " << used << endl;
+	// cout << "Unused: " << unused << endl;
+	// cout << "Delete: " << need << endl;
+
+	vector<File*> candidates;
+	outermost.findGreater(need, candidates);
+	// cout << "size " << candidates.size() << endl;
+	long min = outermost.size;
+	for (auto file : candidates) {
+		// cout << "File '" << file->name << "': " << file->size << endl;
+		if (file->size < min) {
+			min = file->size;
+		}
+	}
+	cout << "Delete: " << min << endl;
 }
 
 int main() {
@@ -150,7 +181,7 @@ int main() {
 	if (in.is_open()) {
 		File outer = readIn(in);
 		outer.calculateSize();
-		// outermost.print("");
+		// outer.print("");
 		part1(outer);
 		part2(outer);
 	}

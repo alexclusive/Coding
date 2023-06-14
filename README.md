@@ -76,7 +76,7 @@ Code for each challenge is found under AdventOfCode/{Year}/{Day}/
 | 4		| Complete	| C++		|
 | 5		| Complete	| C++		|
 | 6		| Complete	| C++		|
-| 7		| Part 1	| C++		|
+| 7		| Complete	| C++		|
 | 8		| Complete	| python 	|
 | 9		| Complete	| python	|
 | 10	| Part 1	| python	|
