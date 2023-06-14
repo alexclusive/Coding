@@ -66,18 +66,40 @@ Each challenge is found at https://adventofcode.com/`Year`/day/`Day`
 
 Code for each challenge is found under AdventOfCode/{Year}/{Day}/
 
-### 2022
+| Complete | Meaning |
+|----------|---------|
+| -1	| Not started		|
+| 0		| Part 1 incomplete	|
+| 1		| Part 2 incomplete	|
+| 2		| Day complete		|
 
-| Day	| Status	| Language	|
-|-------|-----------|-----------|
-| 1		| Complete	| C++		|
-| 2		| Complete	| C++		|
-| 3		| Complete	| C++		|
-| 4		| Complete	| C++		|
-| 5		| Complete	| C++		|
-| 6		| Complete	| C++		|
-| 7		| Complete	| C++		|
-| 8		| Complete	| python 	|
-| 9		| Complete	| python	|
-| 10	| Part 1	| python	|
-| 11	| Complete	| C++		|
+### 2022
+Advent of Code (2022)[https://adventofcode.com/2022]
+
+| Day | Complete | Language |
+|-----|--------|----------|
+| [1](https://adventofcode.com/2022/day/1)		| 2	| C++		|
+| [2](https://adventofcode.com/2022/day/2)		| 2	| C++		|
+| [3](https://adventofcode.com/2022/day/3)		| 2	| C++		|
+| [4](https://adventofcode.com/2022/day/4)		| 2	| C++		|
+| [5](https://adventofcode.com/2022/day/5)		| 2	| C++		|
+| [6](https://adventofcode.com/2022/day/6)		| 2	| C++		|
+| [7](https://adventofcode.com/2022/day/7)		| 2	| C++		|
+| [8](https://adventofcode.com/2022/day/8)		| 2	| python	|
+| [9](https://adventofcode.com/2022/day/9)		| 2	| python	|
+| [10](https://adventofcode.com/2022/day/10)	| 1	| python	|
+| [11](https://adventofcode.com/2022/day/11)	| 2	| C++		|
+| [12](https://adventofcode.com/2022/day/12)	| 0	|			|
+| [13](https://adventofcode.com/2022/day/13)	| 0	|			|
+| [14](https://adventofcode.com/2022/day/14)	| 0	|			|
+| [15](https://adventofcode.com/2022/day/15)	| 0	|			|
+| [16](https://adventofcode.com/2022/day/16)	| 0	|			|
+| [17](https://adventofcode.com/2022/day/17)	| 0	|			|
+| [18](https://adventofcode.com/2022/day/18)	| 0	|			|
+| [19](https://adventofcode.com/2022/day/19)	| 0	|			|
+| [20](https://adventofcode.com/2022/day/20)	| 0	|			|
+| [21](https://adventofcode.com/2022/day/21)	| 0	|			|
+| [22](https://adventofcode.com/2022/day/22)	| 0	|			|
+| [23](https://adventofcode.com/2022/day/23)	| 0	|			|
+| [24](https://adventofcode.com/2022/day/24)	| 0	|			|
+| [25](https://adventofcode.com/2022/day/25)	| 0	|			|
