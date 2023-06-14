@@ -24,11 +24,30 @@ class Monkey {
 		long long inspections = 0;
 
 		string stringItems() {
-			string str = "[";
-			for (long long item : items) {
-				str += to_string(item) + ", ";
+			string str = "";
+			for (int i = 0; i < items.size(); i++) {
+				string end = ", ";
+				if (i == items.size()-1) {
+					end = "";
+				}
+				str += to_string(items[i]) + end;
 			}
-			return str + "]";
+			return str;
+		}
+
+		string stringOperation() {
+			string str = "new = old ";
+			if (opMult) {
+				str.append("* ");
+			} else {
+				str.append("+ ");
+			}
+			if (opOld) {
+				str.append("old");
+			} else {
+				str.append(to_string(opMod));
+			}
+			return str;
 		}
 
 		long long doOp(long long item) {
@@ -44,13 +63,18 @@ class Monkey {
 			return item + opMod;
 		}
 
-		void inspect(bool part1) {
+		void inspect(long div, bool part1) {
 			++inspections;
 			long long item = doOp(items.front());
 			if (part1) {
 				item /= 3;
 			}
-			items.at(0) = item;
+			// if (item < 0) {
+			// 	cout << "Monkey " << id << " holding " << items.front() << " that became " << item << endl;
+			// 	cout << stringOperation() << endl;
+			// 	int a = 0/0;
+			// }
+			items.at(0) = item % div;
 		}
 
 		int check() {
@@ -64,6 +88,19 @@ class Monkey {
 class Group {
 	public:
 		vector<Monkey> monkeys;
+		long div = 1; // avoid overflow by modding by the product of all division checks
+
+		void printDefs() {
+			for (auto m : monkeys) {
+				cout << "Monkey " << m.id << ":" << endl;
+				cout << "  Starting items: " << m.stringItems() << endl;
+				cout << "  Operation: " << m.stringOperation() << endl;
+				cout << "  Test: divisible by " << m.testBy << endl;
+				cout << "    If true: throw to monkey " << m.ifTrue << endl;
+				cout << "    If false: throw to monkey " << m.ifFalse << endl;
+				cout << endl;
+			}
+		}
 
 		void print() {
 			for (int i = 0; i < monkeys.size(); i++) {
@@ -73,23 +110,28 @@ class Group {
 		}
 
 		long long getBusiness() {
-			int top = 0;
-			int second = 0;
-			for (auto monkey : monkeys) {
-				if (monkey.inspections > monkeys.at(top).inspections) {
-					top = monkey.id;
-				} else if (monkey.inspections > monkeys.at(second).inspections) {
-					second = monkey.id;
+			long long top = 0;
+			long long second = 0;
+			for (int i = 0; i < monkeys.size(); i++) {
+				long long insp = monkeys[i].inspections;
+				if (insp > top) {
+					second = top;
+					top = insp;
+				} else if (insp > second) {
+					second = insp;
 				}
 			}
-			return monkeys.at(top).inspections * monkeys.at(second).inspections;
+			long long mult = top * second;
+			// cout << top << " * " << second << " = " << mult << endl;
+			return mult;
 		}
 
 		void doRound(int round, bool part1) {
 			for (int i = 0; i < monkeys.size(); ++i) {
+				// cout << "\tMonkey " << monkeys[i].id << endl;
 				while (monkeys[i].items.size() > 0) {
 					// cout << round << " monkey " << monkeys[i].id << ": item " << monkeys[i].items.front() << endl;
-					monkeys[i].inspect(part1);
+					monkeys[i].inspect(div, part1);
 					int to = monkeys[i].check();
 					monkeys.at(to).items.push_back(monkeys[i].items.front());
 					monkeys[i].items.erase(monkeys[i].items.begin());
@@ -164,6 +206,7 @@ class Group {
 				} else if (line.at(0) == "Test") {
 
 					curr.testBy = stoi(line.at(3));
+					div *= curr.testBy;
 					
 				} else if (line.at(0) == "If") {
 					
@@ -193,19 +236,16 @@ long long getBusiness(Group group, int rounds, bool part1) {
 }
 
 int main() {
-	string filename = "example";
+	string filename = "input";
 	ifstream in (filename);
 	
 	if (in.is_open()) {
 		Group group;
 		group.read(in);
-		group.print();
+		cout << group.div << endl;
+		// group.printDefs();
+		// group.print();
 		// cout << "Business (1): " << getBusiness(group, 20, true) << endl;
-		cout << "Business (2): " << getBusiness(group, 10000, false) << endl;
+		// cout << "Business (2): " << getBusiness(group, 10000, false) << endl;
 	}
 }
-
-// 252 - 13:34
-// 259 - 14:23
-// 262 - 14:34
-// 275 - 17:21

@@ -128,7 +128,7 @@ class Group:
 
 def getBusiness(group:Group, rounds:int, part1=False) -> int:
 	for i in range(rounds):
-		print("Round " + str(i) + " " + str(i/rounds) + "%")
+		print("Round " + str(i) + " " + str((i/rounds)*100) + "%")
 		group.doRound(part1)
 	group.print()
 	return group.getMonkeyBusiness()
@@ -142,7 +142,7 @@ def main():
 	contents = f.read().split("\n")
 	
 	monkeyGroup = Group(contents)
-	print("Part 1:", getBusiness(monkeyGroup, 20, True))
+	# print("Part 1:", getBusiness(monkeyGroup, 20, True))
 	print("Part 2:", getBusiness(monkeyGroup, 10000))
 	# part1(monkeyGroup)
 	# part2(monkeyGroup)
