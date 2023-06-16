@@ -77,29 +77,29 @@ Code for each challenge is found under AdventOfCode/{Year}/{Day}/
 Advent of Code (2022)[https://adventofcode.com/2022]
 
 | Day | Complete | Language |
-|-----|--------|----------|
-| [1](https://adventofcode.com/2022/day/1)		| 2	| C++		|
-| [2](https://adventofcode.com/2022/day/2)		| 2	| C++		|
-| [3](https://adventofcode.com/2022/day/3)		| 2	| C++		|
-| [4](https://adventofcode.com/2022/day/4)		| 2	| C++		|
-| [5](https://adventofcode.com/2022/day/5)		| 2	| C++		|
-| [6](https://adventofcode.com/2022/day/6)		| 2	| C++		|
-| [7](https://adventofcode.com/2022/day/7)		| 2	| C++		|
-| [8](https://adventofcode.com/2022/day/8)		| 2	| python	|
-| [9](https://adventofcode.com/2022/day/9)		| 2	| python	|
-| [10](https://adventofcode.com/2022/day/10)	| 1	| python	|
-| [11](https://adventofcode.com/2022/day/11)	| 2	| C++		|
-| [12](https://adventofcode.com/2022/day/12)	| 0	|			|
-| [13](https://adventofcode.com/2022/day/13)	| 0	|			|
-| [14](https://adventofcode.com/2022/day/14)	| 0	|			|
-| [15](https://adventofcode.com/2022/day/15)	| 0	|			|
-| [16](https://adventofcode.com/2022/day/16)	| 0	|			|
-| [17](https://adventofcode.com/2022/day/17)	| 0	|			|
-| [18](https://adventofcode.com/2022/day/18)	| 0	|			|
-| [19](https://adventofcode.com/2022/day/19)	| 0	|			|
-| [20](https://adventofcode.com/2022/day/20)	| 0	|			|
-| [21](https://adventofcode.com/2022/day/21)	| 0	|			|
-| [22](https://adventofcode.com/2022/day/22)	| 0	|			|
-| [23](https://adventofcode.com/2022/day/23)	| 0	|			|
-| [24](https://adventofcode.com/2022/day/24)	| 0	|			|
-| [25](https://adventofcode.com/2022/day/25)	| 0	|			|
+|-----|----------|----------|
+| [1](https://adventofcode.com/2022/day/1)		| 2		| C++		|
+| [2](https://adventofcode.com/2022/day/2)		| 2		| C++		|
+| [3](https://adventofcode.com/2022/day/3)		| 2		| C++		|
+| [4](https://adventofcode.com/2022/day/4)		| 2		| C++		|
+| [5](https://adventofcode.com/2022/day/5)		| 2		| C++		|
+| [6](https://adventofcode.com/2022/day/6)		| 2		| C++		|
+| [7](https://adventofcode.com/2022/day/7)		| 2		| C++		|
+| [8](https://adventofcode.com/2022/day/8)		| 2		| python	|
+| [9](https://adventofcode.com/2022/day/9)		| 2		| python	|
+| [10](https://adventofcode.com/2022/day/10)	| 1		| python	|
+| [11](https://adventofcode.com/2022/day/11)	| 2		| C++		|
+| [12](https://adventofcode.com/2022/day/12)	| -1	|			|
+| [13](https://adventofcode.com/2022/day/13)	| -1	|			|
+| [14](https://adventofcode.com/2022/day/14)	| -1	|			|
+| [15](https://adventofcode.com/2022/day/15)	| -1	|			|
+| [16](https://adventofcode.com/2022/day/16)	| -1	|			|
+| [17](https://adventofcode.com/2022/day/17)	| -1	|			|
+| [18](https://adventofcode.com/2022/day/18)	| -1	|			|
+| [19](https://adventofcode.com/2022/day/19)	| -1	|			|
+| [20](https://adventofcode.com/2022/day/20)	| -1	|			|
+| [21](https://adventofcode.com/2022/day/21)	| -1	|			|
+| [22](https://adventofcode.com/2022/day/22)	| -1	|			|
+| [23](https://adventofcode.com/2022/day/23)	| -1	|			|
+| [24](https://adventofcode.com/2022/day/24)	| -1	|			|
+| [25](https://adventofcode.com/2022/day/25)	| -1	|			|
