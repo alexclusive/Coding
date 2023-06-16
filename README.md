@@ -89,7 +89,7 @@ Advent of Code (2022)[https://adventofcode.com/2022]
 | [9](https://adventofcode.com/2022/day/9)		| 2		| python	|
 | [10](https://adventofcode.com/2022/day/10)	| 1		| python	|
 | [11](https://adventofcode.com/2022/day/11)	| 2		| C++		|
-| [12](https://adventofcode.com/2022/day/12)	| -1	|			|
+| [12](https://adventofcode.com/2022/day/12)	| 0		|			|
 | [13](https://adventofcode.com/2022/day/13)	| -1	|			|
 | [14](https://adventofcode.com/2022/day/14)	| -1	|			|
 | [15](https://adventofcode.com/2022/day/15)	| -1	|			|

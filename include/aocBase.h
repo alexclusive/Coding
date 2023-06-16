@@ -7,6 +7,29 @@
 #ifndef aocBase
 
 /*
+	Prints items from a 1D vector.
+*/
+template <typename T>
+void print1D(std::vector<T> vec) {
+	for (auto item : vec) {
+		std::cout << item << std::endl;
+	}
+}
+
+/*
+	Prints items from a 2D vector.
+*/
+template <typename T>
+void print2D(std::vector<T> vec) {
+	for (auto row : vec) {
+		for (auto item : row) {
+			std::cout << item;
+		}
+		std::cout << std::endl;
+	}
+}
+
+/*
 	Replaces each item in string that matches remove with replace.
 	e.g. replaceAll("test:test,test", {":", ","}, " ") -> "test test test"
 	@return the altered string
@@ -128,6 +151,23 @@ std::vector<std::string> readFile(std::string name) {
 	}
 	std::vector<std::string> empty;
 	return empty;
+}
+
+/*
+	Turns a 1D string array into a 2D char array.
+	@return vector of vector of char
+	@param vec - string vector to break down
+*/
+std::vector<std::vector<char>> breakDownStringVector(std::vector<std::string> vec) {
+	std::vector<std::vector<char>> ret;
+	for (auto str : vec) {
+		std::vector<char> row;
+		for (auto ch : str) {
+			row.push_back(ch);
+		}
+		ret.push_back(row);
+	}
+	return ret;
 }
 
 #endif // aocBase
