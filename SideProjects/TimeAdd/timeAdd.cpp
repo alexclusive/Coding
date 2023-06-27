@@ -89,7 +89,7 @@ class Time {
 				}
 			}
 			if (weeks > 0 && days > 0) {
-				str += ", ";
+				str += ",";
 			}
 
 			if (days > 0) {
@@ -102,7 +102,7 @@ class Time {
 				}
 			}
 			if (days > 0 && hours > 0) {
-				str += ", ";
+				str += ",";
 			}
 
 			if (hours > 0) {
@@ -115,7 +115,7 @@ class Time {
 				}
 			}
 			if (hours > 0 && mins > 0) {
-				str += ", ";
+				str += ",";
 			}
 
 			if (mins > 0) {
@@ -128,7 +128,7 @@ class Time {
 				}
 			}
 			if (mins > 0 && hours > 0) {
-				str += ", ";
+				str += ",";
 			}
 
 			if (secs > 0) {
