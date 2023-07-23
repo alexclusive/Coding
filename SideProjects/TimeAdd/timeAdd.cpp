@@ -68,13 +68,21 @@ class Time {
 		Time() {
 		}
 
-		void add(Time toAdd) {
-			secs += toAdd.secs;
-			mins += toAdd.mins;
-			hours += toAdd.hours;
-			days += toAdd.days;
-			weeks += toAdd.weeks;
+		void add(Time* toAdd) {
+			secs += toAdd->secs;
+			mins += toAdd->mins;
+			hours += toAdd->hours;
+			days += toAdd->days;
+			weeks += toAdd->weeks;
 			validate();
+		}
+
+		bool isZero() {
+			return secs == 0
+				&& mins == 0
+				&& hours == 0
+				&& days == 0
+				&& weeks == 0;
 		}
 
 		string toString() {
@@ -165,7 +173,7 @@ class TimeAdder {
 
 		void addAllTimes() {
 			for (auto time : times) {
-				total.add(time);
+				total.add(&time);
 			}
 		}
 
@@ -177,9 +185,6 @@ class TimeAdder {
 
 int main() {
 	TimeAdder adder;
-	adder.insert(Time(8,23,10));
-	adder.insert(Time(4,5,56));
-	adder.insert(Time(6,6,39));
-	adder.insert(Time(5,15,43));
+	adder.insert(Time(1236,17,07));
 	cout << "Total: " << adder.getTotal().toString() << endl;
 }

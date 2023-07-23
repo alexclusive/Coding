@@ -69,6 +69,8 @@
 		"queue": "cpp",
 		"locale": "cpp",
 		"xlocbuf": "cpp",
-		"xlocmes": "cpp"
+		"xlocmes": "cpp",
+		"bitset": "cpp",
+		"map": "cpp"
 	}
 }
